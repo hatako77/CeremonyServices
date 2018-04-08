@@ -30,5 +30,14 @@ namespace CRM.Models
         
         public virtual ApplicationUser User { get; set; }
     }
+    
+    public class CSContext : DbContext
+    { 
+        public CSContext() : base("CSDatabase") {}
+        
+        public DbSet<UserInfo> UserInfos { get; set; } 
+        public DbSet<Product> Products { get; set; } 
+    }
+
 
 }
