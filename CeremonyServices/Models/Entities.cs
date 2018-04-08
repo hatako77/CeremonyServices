@@ -13,19 +13,20 @@ namespace CeremonyServices.Models
         [ForeignKey("User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Credit { get; set; }
-        public Boolean IsPro { get; set; }
-        
-        
         
         public virtual ApplicationUser User { get; set; }
     }
 
-    public class ...
+    public class Venue
     {
         
         [Column(TypeName="bigint")]
-        public int ...Id { get; set; }
+        public int VenueId { get; set; }
+        [DefaultValue(3000)]
+        public int Credit { get; set; }
+        [DefaultValue("true")]
+        public Boolean Suspended { get; set; }
+        public DateTime ExpDate { get; set; }
         
         public virtual ApplicationUser User { get; set; }
     }
