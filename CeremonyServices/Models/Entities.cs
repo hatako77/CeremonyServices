@@ -66,7 +66,7 @@ namespace CeremonyServices.Models
         public int MusicPrice { get; set; }
         public int FirePlayPrice { get; set; }
 
-        public virtual ICollection<FoodMenu> FoodMenu { get; set; }
+        public virtual ICollection<FoodMenu> FoodMenus { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
 
