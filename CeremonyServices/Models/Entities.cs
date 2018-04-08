@@ -8,25 +8,38 @@ using System.Web.Security;
 
 namespace CeremonyServices.Models
 {
+    public class ApplicationUser : IdentityUser
+    {
+    ...
+    public virtual UserInfo UserInfo { get; set; }
+    public virtual ICollection<Venue> Venue { get; set; }
+    
+    }
+
+    
     public class UserInfo
     {
         [ForeignKey("User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         
+        
         public virtual ApplicationUser User { get; set; }
     }
 
     public class Venue
     {
-        
         [Column(TypeName="bigint")]
         public int VenueId { get; set; }
         [DefaultValue(3000)]
         public int Credit { get; set; }
         [DefaultValue("true")]
         public Boolean Suspended { get; set; }
-        public DateTime ExpDate { get; set; }
+        public DateTime? ExpDate { get; set; }
+        [Required]
+        public string Province { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         
         public virtual ApplicationUser User { get; set; }
     }
