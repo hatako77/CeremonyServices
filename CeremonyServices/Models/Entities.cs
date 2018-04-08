@@ -10,9 +10,9 @@ namespace CeremonyServices.Models
 {
     public class ApplicationUser : IdentityUser
     {
-    ...
-    public virtual UserInfo UserInfo { get; set; }
-    public virtual ICollection<Venue> Venue { get; set; }
+        ...
+        public virtual UserInfo UserInfo { get; set; }
+        public virtual ICollection<Venue> Venue { get; set; }
     
     }
 
@@ -53,7 +53,14 @@ namespace CeremonyServices.Models
         public int? Phone1 { get; set; }
         [Column(TypeName="bigint")]
         public int? Phone2 { get; set; }
+        public string Insta { get; set; }
+        public string Telegram { get; set; }
+        public string Website { get; set; }
 
+        public int Capacity { get; set; }
+        public int Parking { get; set; }
+        public bool Coffeeshop { get; set; }
+        public bool OldCoffeeshop { get; set; }
         
         
         public virtual ApplicationUser User { get; set; }
