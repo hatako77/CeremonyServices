@@ -61,19 +61,33 @@ namespace CeremonyServices.Models
         public int Parking { get; set; }
         public bool Coffeeshop { get; set; }
         public bool OldCoffeeshop { get; set; }
-        
-        
+
+        public int EnterancePrice { get; set; }
+        public int MusicPrice { get; set; }
+        public int FirePlayPrice { get; set; }
+
+        public virtual ICollection<FoodMenu> FoodMenu { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
-    
-    
+
+    public class FoodMenu
+    {
+        [Column(TypeName="bigint")]
+        public int FoodMenuId { get; set; }
+        public string Dsc { get; set; }
+        public int Price { get; set; }
+        public virtual Venue Venue { get; set; }
+    }
+
+
     //ConnectionString Name Must Be: "CSDatabase"
     public class CSContext : DbContext
     { 
         public CSContext() : base("CSDatabase") {}
-        
+
         public DbSet<UserInfo> UserInfos { get; set; } 
-        public DbSet<Product> Products { get; set; } 
+        public DbSet<Venue> Venues { get; set; } 
+        public DbSet<FoodMenu> FoodMenus { get; set; } 
     }
 
 
