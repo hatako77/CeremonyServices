@@ -22,9 +22,9 @@ namespace CeremonyServices.Models
         [ForeignKey("User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string LastName { get; set; }
-        
-
+        public string EMail { get; set; }
+        [Column(TypeName="bigint")]
+        public int? Mobile { get; set; }
 
         public virtual ApplicationUser User { get; set; }
     }
@@ -38,9 +38,12 @@ namespace CeremonyServices.Models
         [DefaultValue("true")]
         public Boolean Suspended { get; set; }
         public DateTime? ExpDate { get; set; }
+        
         [Required]
         public string Province { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string Address { get; set; }
         [Column(TypeName="bigint")]
         public int? Mobile { get; set; }
@@ -50,6 +53,7 @@ namespace CeremonyServices.Models
         public int? Phone2 { get; set; }
 
         
+
         public virtual ApplicationUser User { get; set; }
     }
     
