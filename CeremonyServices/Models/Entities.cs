@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
 
-namespace CRM.Models
+namespace CeremonyServices.Models
 {
     public class UserInfo
     {
@@ -16,21 +16,22 @@ namespace CRM.Models
         public int Credit { get; set; }
         public Boolean IsPro { get; set; }
         
+        
+        
         public virtual ApplicationUser User { get; set; }
     }
 
-    public class Skill
+    public class ...
     {
-        public int64 SkillId { get; set; }
-        public int16 AdobePhotoshop { get; set; }
-        public int16 AdobeIllustrator { get; set; }
-        public int16 AdobeAfterEffect { get; set; }
-        public int16 AdobeDesign { get; set; }
-        public int16 CorelDraw { get; set; }
+        
+        [Column(TypeName="bigint")]
+        public int ...Id { get; set; }
         
         public virtual ApplicationUser User { get; set; }
     }
     
+    
+    //ConnectionString Name Must Be: "CSDatabase"
     public class CSContext : DbContext
     { 
         public CSContext() : base("CSDatabase") {}
