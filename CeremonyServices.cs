@@ -11,7 +11,6 @@ namespace CRM.Models
     public class UserInfo
     {
         [ForeignKey("User")]
-        public string UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Credit { get; set; }
