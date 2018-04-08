@@ -79,7 +79,7 @@ namespace CeremonyServices.Models
         public virtual Venue Venue { get; set; }
     }
 
-    public class Venue Payment
+    public class VenuePayment
     {
         public int PaymentId { get; set; }
         public DateTime PayDate { get; set; }
@@ -99,6 +99,7 @@ namespace CeremonyServices.Models
         public DbSet<UserInfo> UserInfos { get; set; } 
         public DbSet<Venue> Venues { get; set; } 
         public DbSet<FoodMenu> FoodMenus { get; set; } 
+        public DbSet<VenuePayment> VenuePayments { get; set; } 
     }
 
 
