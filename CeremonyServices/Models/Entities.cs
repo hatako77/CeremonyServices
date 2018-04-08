@@ -22,8 +22,10 @@ namespace CeremonyServices.Models
         [ForeignKey("User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string LastName { get; set; }
         
-        
+
+
         public virtual ApplicationUser User { get; set; }
     }
 
@@ -40,6 +42,13 @@ namespace CeremonyServices.Models
         public string Province { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+        [Column(TypeName="bigint")]
+        public int? Mobile { get; set; }
+        [Column(TypeName="bigint")]
+        public int? Phone1 { get; set; }
+        [Column(TypeName="bigint")]
+        public int? Phone2 { get; set; }
+
         
         public virtual ApplicationUser User { get; set; }
     }
