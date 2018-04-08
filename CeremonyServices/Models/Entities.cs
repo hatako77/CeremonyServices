@@ -79,7 +79,7 @@ namespace CeremonyServices.Models
         public virtual Venue Venue { get; set; }
     }
 
-    public class Payment
+    public class Venue Payment
     {
         public int PaymentId { get; set; }
         public DateTime PayDate { get; set; }
