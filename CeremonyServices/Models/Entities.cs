@@ -40,6 +40,8 @@ namespace CeremonyServices.Models
         public DateTime? ExpDate { get; set; }
         
         [Required]
+        public string Name { get; set; }
+        [Required]
         public string Province { get; set; }
         [Required]
         public string City { get; set; }
@@ -53,7 +55,7 @@ namespace CeremonyServices.Models
         public int? Phone2 { get; set; }
 
         
-
+        
         public virtual ApplicationUser User { get; set; }
     }
     
