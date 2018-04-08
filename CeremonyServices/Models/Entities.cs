@@ -79,6 +79,17 @@ namespace CeremonyServices.Models
         public virtual Venue Venue { get; set; }
     }
 
+    public class Payment
+    {
+        public int PaymentId { get; set; }
+        public DateTime PayDate { get; set; }
+        public int Price { get; set; }
+        public bool Done { get; set; }
+        public string PayCode { get; set; }
+
+        public virtual Venue Venue { get; set; }
+    }
+
 
     //ConnectionString Name Must Be: "CSDatabase"
     public class CSContext : DbContext
