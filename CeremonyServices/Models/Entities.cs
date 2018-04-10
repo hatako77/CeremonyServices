@@ -19,7 +19,7 @@ namespace CeremonyServices.Models
     
     public class UserInfo
     {
-        [ForeignKey("User")]
+        [Key, ForeignKey("User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EMail { get; set; }
