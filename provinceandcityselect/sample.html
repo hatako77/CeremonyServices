@@ -1,0 +1,26 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+  	<label for="validationCustom03">Province:</label>
+      <select class="form-control form-control-lg" name="category" id="validationCustom03" onchange="Changeprovincelist()" required>
+        <option value="">Choose... </option>
+        <option value="mazandaran">مازندران</option>
+        <option value="tehran">تهران</option>
+        <option value="golestan">گلستان</option>
+      </select>
+	<div class="invalid-feedback">
+		Please provide a category.
+	</div>
+  </div>
+  <div class="col-md-6 mb-3">
+  	<label for="validationCustom04">City:</label>
+     <select class="form-control form-control-lg" id="validationCustom04" name="activity" required></select>
+    <div class="invalid-feedback">
+		Please provide an activity.
+	</div>
+  </div>
+</div>
