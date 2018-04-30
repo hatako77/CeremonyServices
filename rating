@@ -1,0 +1,140 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .rating {
+        display: inline-block;
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        font-size: 50px;
+    }
+
+        .rating label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            cursor: pointer;
+        }
+
+            .rating label:last-child {
+                position: static;
+            }
+
+            .rating label:nth-child(1) {
+                z-index: 5;
+            }
+
+            .rating label:nth-child(2) {
+                z-index: 4;
+            }
+
+            .rating label:nth-child(3) {
+                z-index: 3;
+            }
+
+            .rating label:nth-child(4) {
+                z-index: 2;
+            }
+
+            .rating label:nth-child(5) {
+                z-index: 1;
+            }
+
+            .rating label input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+
+            .rating label .icon {
+                float: left;
+                color: transparent;
+            }
+
+            .rating label:last-child .icon {
+                color: #8b8b8b;
+            }
+
+        .rating:not(:hover) label input:checked ~ .icon,
+        .rating:hover label:hover input ~ .icon {
+            color: #fff200;
+        }
+
+        .rating label input:focus:not(:checked) ~ .icon:last-child {
+            color: #525252;
+            text-shadow: 0 0 5px #09f;
+        }
+</style>
+<script>
+    function Changeprovincelist() {
+        $('#citylist').html('');
+        $('#citylist').removeClass("disabled");
+    }
+
+</script>
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom03">استان:</label>
+        <select class="form-control form-control-lg"  id="provincelist" onchange="Changeprovincelist()" required>
+            <option value="">انتخاب کنید ... </option>
+            <option value="1">مازندران</option>
+            <option value="2">تهران</option>
+            <option value="3">گلستان</option>
+        </select>
+        <div class="invalid-feedback">
+            Please provide a category.
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom04">شهر:</label>
+        <select class="form-control form-control-lg disabled" id="citylist" required>
+            <option>یبلیبل</option>
+        </select>
+        <div class="invalid-feedback">
+            Please provide an activity.
+        </div>
+    </div>
+</div>
+<form class="rating">
+    <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">🌟</span>
+    </label>
+    <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+    </label>
+    <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+    </label>
+    <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+    </label>
+    <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+        <span class="icon">🌟</span>
+    </label>
+</form>
+
+@{ 
+    var i = 4.5;
+    var rateurl = "/images/" + @i.ToString() + ".png";
+}
+
+<img id="imgtest" src='@rateurl' style="height:50px" />
+
